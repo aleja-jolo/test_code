@@ -87,7 +87,7 @@ def get_hourly_temp(output_data_dict, extract_daily_max_temp=False):
 
             except KeyError:
                 print(f"{local_time}: Temperature data gaps here")
-
+		print("This time is NOT recorded")
 
         # Save max daily data in a new dict
         if extract_daily_max_temp:
