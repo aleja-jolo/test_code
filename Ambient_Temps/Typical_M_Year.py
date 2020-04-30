@@ -48,6 +48,7 @@ def interpolate_raw(df):
     if 6 in df['diff'].unique():
         print("Warning: data has at least one instance of 6 or more consecutive hours missing. "
               "Gaps of 6 or more hours are not interplated. t")
+    print(len(df[df['diff']>1])
     df = df.query("diff<6")
     df['Temp_C'] = df['Temp_C'].interpolate(method='cubic')
     df.drop(columns=['diff'],inplace=True)
