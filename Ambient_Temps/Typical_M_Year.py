@@ -34,6 +34,7 @@ def convert_to_df(time_temp):
     df.drop_duplicates(subset='DateTime', inplace=True)
     return df
 
+# add comment here!
 # Function uses original dataframe data to interpolate missing dates
 # Will only keep interpolated values if the number of consecutive days to interpolate was less than 6
 def interpolate_raw(df):
