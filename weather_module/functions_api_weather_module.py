@@ -83,10 +83,11 @@ def get_hourly_temp(output_data_dict, extract_daily_max_temp=False):
             # this algo fills data gaps with previous hour temperature
             try:
                 te = hd['temperature']
+	        time_temp[day]['temperature'].append(te)
+
             except KeyError:
                 print(f"{local_time}: Temperature data gaps here")
 
-            time_temp[day]['temperature'].append(te)
 
         # Save max daily data in a new dict
         if extract_daily_max_temp:
