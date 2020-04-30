@@ -7,7 +7,7 @@ from geopy.geocoders import Nominatim
 
 # todo : convert different types of user date formats to python acceptable one
 # for ex. - 2019-01-01 to be converted into 2019-1-1
-
+# test something
 
 # API call
 def get_data_from_api(latitude, longitude, start_date, end_date):
