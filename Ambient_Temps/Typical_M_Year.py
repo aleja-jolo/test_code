@@ -30,7 +30,6 @@ def convert_to_df(time_temp):
         raise Exception(f"No data found in temperature input")
     df.sort_values('DateTime', inplace=True)
     df.drop_duplicates(subset='DateTime', inplace=True)
-    print(df)
     return df
 
 # Function uses original dataframe data to interpolate missing dates
