@@ -49,7 +49,9 @@ def interpolate_raw(df):
               "Gaps of 6 or more hours are not interplated. t")
     print(len(df[df['diff']>1])
     df = df.query("diff<6")
+    print(datetime.datetime.now())
     df['Temp_C'] = df['Temp_C'].interpolate(method='cubic')
+    print(datetime.datetime.now())
     df.drop(columns=['diff'],inplace=True)
     return df
 
@@ -358,11 +360,14 @@ if __name__ == '__main__':
 
     # interpolate missing values in daframe
     # note: interpolation will only happen when there are less than 6 consecutive values
+    print(datetime.datetime.now())
     df = interpolate_raw(df)
 
     # Process dataframe
+    print(datetime.datetime.now())
     df_p = process_data(df)
     print(df_p)
+    print(datetime.datetime.now()) 
 
     # Get 99 percentile temperatures for each season
     p99_seasons = get_p99(df_p,dates)
