@@ -98,6 +98,7 @@ class Sandia:
         self.lt_df = tdf.groupby(['Month', 'Day'])['Temp_C']. \
             describe()[['mean', 'min', 'max']].reset_index()
         self.lt_df['range'] = self.day_df['max'] - self.day_df['min']
+	print(datetime.datetime.now())
 
     # Perform Steps 1 and 2 of Sandia method
     # These steps first calculates the FS statistic
@@ -107,6 +108,7 @@ class Sandia:
     # The FS stats for the above are then weighted (equally) and summed
     # This produces one weighted FS (WS) stat for each month/year combination
     def get_Fstat(self):
+	print(datetime.datetime.now())
         self.Fstat = pd.DataFrame(columns=['Year', 'Month', 'WS'])
         stats = ['mean', 'min', 'max', 'range']
         # weights are equal for the stats (above)
@@ -142,7 +144,8 @@ class Sandia:
         self.Fstat['Year'] = self.Fstat['Year'].astype(np.int64)
         self.Fstat['Month'] = self.Fstat['Month'].astype(np.int64)
         self.Fstat['WS'] = self.Fstat['WS'].astype(np.float64)
-
+	print(datetime.datetime.now())
+	
     # Function narrows down top five candiates for each month based on step 2..
     # and performs steps 3 and 4 of Sandia Method
     # Step 3 reorganizes top five:
