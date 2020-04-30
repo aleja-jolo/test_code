@@ -362,6 +362,7 @@ if __name__ == '__main__':
 
     # Process dataframe
     df_p = process_data(df)
+    print(df_p)
 
     # Get 99 percentile temperatures for each season
     p99_seasons = get_p99(df_p,dates)
