@@ -13,6 +13,7 @@ from pandas import Series, DataFrame
 
 #testing merging conflicts hi hi
 # test test test
+#making sure I remember how to merge branches
 
 # Function converts json input into a dataframe
 def convert_to_df(time_temp):
