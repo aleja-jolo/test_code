@@ -44,6 +44,7 @@ def load_apidata_from_json(file):
     :param file:
     :return: output_data_dict: dict, same as output of get_data_from_api()
     """
+    # note sometimes api times out
     with open(file, 'r') as f:
         output_data_dict = json.load(f)
     return output_data_dict
